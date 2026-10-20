@@ -1,7 +1,7 @@
 import json   #saves data to files 
 import socket #checks if robot connected to network
 
-import settings
+from . import settings
 
 #take the connection and position angles from pyniryo
 from pyniryo import NiryoRobot, PoseObject 
@@ -18,7 +18,7 @@ def connect():
 
     # calibrating the robot
     robot = NiryoRobot(settings.ROBOT_IP)
-    robot.calibrate_auto() # motor automatically go  to 0 position
+    robot.calibrate_auto() # motor automatically go  to  reference position
     robot.update_tool() # detect which gripper is mounted on
     robot.enable_tcp(True) # position of tcp and not the wrist
     robot.set_learning_mode(False) #robot holding the position
@@ -42,4 +42,11 @@ def  load_gripper_down():
 
      with open(settings.GRIPPER_FILE) as file: #open the file created above
           return PoseObject.from_dict(json.load(file))
-    
+
+
+#the above code is to test the first part 
+#see test_robot.py
+# first test succesful , gripper coord were saved in a file called gripper_down.json
+
+#to edit, i want these file to be inside a seperate folder
+
