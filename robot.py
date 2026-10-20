@@ -42,6 +42,4 @@ def  load_gripper_down():
 
      with open(settings.GRIPPER_FILE) as file: #open the file created above
           return PoseObject.from_dict(json.load(file))
-
-
-     
+    
