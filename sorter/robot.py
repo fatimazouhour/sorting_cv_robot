@@ -1,7 +1,7 @@
 import json   #saves data to files 
 import socket #checks if robot connected to network
 
-import connection
+import settings
 
 #take the connection and position angles from pyniryo
 from pyniryo import NiryoRobot, PoseObject 
@@ -9,7 +9,7 @@ from pyniryo import NiryoRobot, PoseObject
 #checking the connection
 def connect():
     try: 
-        socket.create_connection((connection.ROBOT_IP,40001),timeout=5).close()
+        socket.create_connection((settings.ROBOT_IP,40001),timeout=5).close()
     except OSError:
         raise SystemExit(
             f"no answer from robot"
@@ -17,12 +17,12 @@ def connect():
 
 
     # calibrating the robot
-    robot = NiryoRobot(connection.ROBOT_IP)
+    robot = NiryoRobot(settings.ROBOT_IP)
     robot.calibrate_auto() # motor automatically go  to 0 position
     robot.update_tool() # detect which gripper is mounted on
     robot.enable_tcp(True) # position of tcp and not the wrist
     robot.set_learning_mode(False) #robot holding the position
-    robot.set_arm_max_velocity(connection.ARM_SPEED) #speed limit
+    robot.set_arm_max_velocity(settings.ARM_SPEED) #speed limit
 
     return robot 
 
