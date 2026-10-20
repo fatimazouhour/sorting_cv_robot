@@ -4,3 +4,6 @@ __pycache__/
 
 *.pt
 data/*.json
+.vscode/
+
+*.json
