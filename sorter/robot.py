@@ -5,7 +5,7 @@ import os
 from . import settings
 
 #take the connection and position angles from pyniryo
-from pyniryo import NiryoRobot, PoseObject 
+from pyniryo import NiryoRobot, NiryoRobotException, PoseObject 
 
 #checking the connection
 def connect():
@@ -52,3 +52,21 @@ def  load_gripper_down():
 
 #to edit, i want these file to be inside a seperate folder
 
+def target(x,y,z,gripper):
+     return PoseObject(x,y,z,gripper.roll,gripper.pitch,gripper.yaw,metadata=gripper.metadata)
+
+def can_reach(robot,x,y,z,gripper):
+     # we want the object to be reachable withing the task space
+    for height in [z,z+settings.APPROACH_HEIGHT]:
+        try:
+                robot.move_pose(target(x,y,height,gripper))
+        except NiryoRobotException:
+            return False
+    return True
+     
+def park(robot,gripper):
+     x,y,z = settings.PARK_XYZ
+     robot.move_pose(target(x,y,z,gripper))
+
+
+# for the above test reach .py    
