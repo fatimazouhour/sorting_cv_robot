@@ -1,5 +1,6 @@
 import json   #saves data to files 
 import socket #checks if robot connected to network
+import os 
 
 from . import settings
 
@@ -30,7 +31,8 @@ def connect():
 #the robot knows where to go, i want to make it know how the gripper should turn
 
 def save_gripper_down(robot):
-    pose = robot.get_pose() #returns the current pose of the gripper
+    folder = os.path.dirname(settings.GRIPPER_FILE)   
+    os.makedirs(folder, exist_ok=True) 
 
     with open(settings.GRIPPER_FILE,'w') as file: #writing mode , see doc
             json.dump(pose.to_dict(),file,indent=2)  #converts the pose object to a dictionry, written in json format
