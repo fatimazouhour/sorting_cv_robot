@@ -1,2 +1,11 @@
+.venv/
+
+__pycache__/
+
+*.pt
+data/*.json
+.vscode/
+
+*.json
 venv
 *.pt
