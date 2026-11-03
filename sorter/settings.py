@@ -4,8 +4,9 @@ from dotenv import load_dotenv
 load_dotenv()  # take environment variables from .env
 
 #connection
-ROBOT_IP = os.getenv("ROBOT_IP")  
-CAMERA = os.getenv("CAMERA")
+ROBOT_IP = os.environ("ROBOT_IP")  
+CAMERA = os.environ("CAMERA")
+ROBOT_TYPE = os.environ.get("ROBOT_TYPE", "niryo")
 #YOLO_MODEL = os.environ.get("YOLO_MODEL", "data/yolo11s.pt")
 
 #arm
@@ -36,7 +37,7 @@ DARK_RATIO_LIMIT = 0.06
 IGNORE_NEAR_DROP = 0.07 #if a fruit close this much to a marker conssider as sorted
 
 #conveyor settings
-CONVEYOR_SPEED = 0.5
+CONVEYOR_SPEED = 30 #percentage of max speed
 CONVEYOR_TIMEOUT = 5.0 
 SENSOR_PIN ="DI5"
 SENSOR_DETECTED ="LOW"
