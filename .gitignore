@@ -17,3 +17,16 @@ wandb/
 
 # Archives
 *.zip
+.venv/
+
+__pycache__/
+
+*.pt
+data/*.json
+.vscode/
+
+*.json
+
+*.env
+venv
+*.pt
