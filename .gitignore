@@ -7,5 +7,7 @@ data/*.json
 .vscode/
 
 *.json
+
+*.env
 venv
 *.pt
