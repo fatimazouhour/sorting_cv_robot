@@ -1,3 +1,22 @@
+# Dataset
+fruit-sorting/data/
+
+# Virtual environment
+.venv/
+
+# YOLO weights
+*.pt
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Training outputs
+runs/
+wandb/
+
+# Archives
+*.zip
 .venv/
 
 __pycache__/
