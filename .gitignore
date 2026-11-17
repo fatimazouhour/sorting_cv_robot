@@ -1,6 +1,7 @@
 .venv/
 
 __pycache__/
+*.pytest_cache
 
 *.pt
 data/*.json
@@ -9,3 +10,15 @@ data/*.json
 *.json
 
 *.env
+
+#solidworks and bambo studio gen files
+~$*
+*.SLDBAK
+*.sldbak
+*.bak
+
+*.gcode
+*.gcode.3mf
+
+Thumbs.db
+desktop.ini
