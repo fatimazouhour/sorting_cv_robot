@@ -1,0 +1,5 @@
+repositories:
+  ned-ros2-driver:
+    type: git
+    url: https://github.com/NiryoRobotics/ned-ros2-driver.git
+    version: main
