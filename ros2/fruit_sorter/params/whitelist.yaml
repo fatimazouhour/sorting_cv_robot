@@ -1,0 +1,12 @@
+/**:
+  ros__parameters:
+    topic_whitelist:
+      - "^/joint_states$"
+      - "^/tf$"
+      - "^/tf_static$"
+    service_whitelist:
+      - "^/niryo_robot/learning_mode/activate$"
+    action_whitelist:
+      - "^/niryo_robot_follow_joint_trajectory_controller/follow_joint_trajectory$"
+      - "^/niryo_robot_arm_commander/robot_action$"
+      - "^/niryo_robot_tools_commander/action_server$"

@@ -1,0 +1,5 @@
+rosbridge_port: 9090
+robot_namespaces:
+  - ""
+robot_ips:
+  - "10.10.10.10"   # robot hotspot; 127.0.0.1 for the Niryo Studio simulation
