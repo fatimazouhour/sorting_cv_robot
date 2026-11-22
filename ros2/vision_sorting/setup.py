@@ -2,7 +2,7 @@ from setuptools import find_packages, setup
 import os
 from glob import glob
 
-package_name = 'fruit_sorter'
+package_name = 'vision_sorting'
 
 setup(
     name=package_name,
@@ -18,7 +18,7 @@ setup(
     zip_safe=True,
     maintainer='Fatima Zouhour',
     maintainer_email='fatimazouhour@outlook.com',
-    description='Vision-guided fruit sorting with a Niryo Ned',
+    description='Vision-guided object sorting with a Niryo Ned',
     license='Apache-2.0',
     extras_require={
         'test': [
