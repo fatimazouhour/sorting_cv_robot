@@ -1,0 +1,10 @@
+ned_compat:
+  ros__parameters:
+    robot_ip: "10.10.10.10"
+    timeout: 60.0
+pick_place:
+  ros__parameters:
+    gripper_id: 13
+    gripper_speed: 500
+    park: [0.20, 0.0, 0.20]          # x y z in metres, base frame
+    gripper_rpy: [0.0, 1.57, 0.0] 

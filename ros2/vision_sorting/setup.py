@@ -26,7 +26,9 @@ setup(
         ],
     },
     entry_points={
-        'console_scripts': [
+        'console_scripts': [ 'pick_place = vision_sorting.pick_place:main',
+                            'ned_compat = vision_sorting.ned_compat:main',
+
         ],
     },
 )
